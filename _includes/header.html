@@ -18,11 +18,11 @@
         {% unless site.lang == lang %}
         {% if lang == site.default_lang and site.default_locale_in_subfolder != true %}
         <li class="nav-item mr-4 mb-2 mb-lg-0">
-          <a class="nav-link" href="{{ site.baseurl_root }}{{ page.url }}">{% translate langs.{{ lang }} %}</a>
+          <a class="nav-link" href="{{ site.baseurl_root }}{{ page.url }}">{% t langs.{{ lang }} %}</a>
         </li>
         {% else %}
         <li class="nav-item mr-4 mb-2 mb-lg-0">
-          <a class="nav-link" href="{{ site.baseurl_root }}/{{ lang }}{{ page.url }}">{% translate langs.{{ lang }}
+          <a class="nav-link" href="{{ site.baseurl_root }}/{{ lang }}{{ page.url }}">{% t langs.{{ lang }}
             %}</a>
         </li>
         {% endif %}
