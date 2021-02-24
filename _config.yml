@@ -4,7 +4,7 @@ email: info@ScannerVision.com
 description: >- # this means to ignore newlines until "baseurl:"
   this is the documentation site of scannervision 
   you can find all the details about our products in this site
-baseurl: "" # the subpath of your site, e.g. /blog
+baseurl: "/SVDOCS" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 
 
