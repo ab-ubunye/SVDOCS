@@ -1,0 +1,37 @@
+global:
+  tagline: English
+
+langs:
+  it: Italiano
+  en: English
+  es: Spanish
+
+
+toc:
+- title: Documentation
+  url: docs
+  links:
+    - title: "Getting Started"
+      url: "docs/getting-started"
+      children:
+        - title: Features
+          url: "docs/getting-started#getting-started"
+        - title: Development
+          url: "docs/getting-started#development"
+        - title: Customization
+          url: "docs/getting-started#customization"
+    - title: "Extras"
+      url: "docs/extras"
+      children:
+        - title: Quizzes
+          url: "docs/extras/example-quiz"
+    - title: "About"
+      url: "about"
+
+navigation:
+- title: About
+  url: about
+- title: Documentation
+  url: docs
+
+search: "Search this site…"
