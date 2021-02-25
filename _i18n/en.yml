@@ -27,6 +27,8 @@ toc:
           url: "docs/extras/example-quiz"
     - title: "About"
       url: "about"
+    - title: organization
+      url: "docs/getting-started#organization"
 
 navigation:
 - title: ScannerVision
