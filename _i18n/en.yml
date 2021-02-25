@@ -29,10 +29,13 @@ toc:
       url: "about"
 
 navigation:
-- title: About
-  url: about
-- title: Documentation
-  url: docs
+- title: ScannerVision
+  url: docs/ScannerVision
+- title: aivika
+  url: docs/aivika
+- title: DocVolante
+  url: docs/DocVolante
+
 
 search: "Search this site…"
 
