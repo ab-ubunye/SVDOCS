@@ -72,7 +72,7 @@
 			});
 
 			searchResultsEl.innerHTML = resultsHTML;
-			searchProcessEl.innerText = "Showing";
+			searchProcessEl.innerText = "Demostración";
 		} else {
 			searchResultsEl.style.display = "none";
 			searchProcessEl.innerText = "No";
