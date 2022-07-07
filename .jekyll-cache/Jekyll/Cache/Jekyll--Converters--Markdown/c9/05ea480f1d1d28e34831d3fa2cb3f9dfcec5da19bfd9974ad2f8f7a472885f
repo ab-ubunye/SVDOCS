@@ -1,0 +1,15 @@
+I"Å<h1 id="extras">Extras</h1>
+
+<p><code>this is the Spanish version</code></p>
+
+<p>Extras include other integrations that arenâ€™t relevant to style or customization,
+but can further enhance your documentation pages. Currently, we have support
+for adding interactive quizzes.</p>
+
+<ul>
+  <li><a href="example-quiz">Quizzes</a></li>
+</ul>
+
+<p>Would you like to see another question type, or another kind of extra? Please
+[open an issue])(/issues/new).</p>
+:ET

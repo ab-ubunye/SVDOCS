@@ -1,0 +1,382 @@
+I"�6<h1 id="getting-started">Getting Started</h1>
+
+<p><code>this is the Spanish version</code></p>
+
+<p><code>this is a code snippet</code></p>
+<h2 id="features">Features</h2>
+
+<h3 id="user-interaction">User Interaction</h3>
+
+<p>On the right side of any page, you’ll notice links to edit the page, or
+open an issue. This ensures that any time you have a question or want to 
+suggest or request a change, you can do so immediately and link directly
+to the section of interest. The sections on the page also have permalinks so
+you can link directly to them.</p>
+
+<h3 id="search">Search</h3>
+
+<p>The entire site, including posts and documentation, is indexed and then available
+for search at the top or side of the page. Give it a try! The content is rendered
+into window data that is used by lunr.js to generate the search results.
+If you want to exclude any file from search, add this to its front end matter:</p>
+
+<pre><code>---
+layout: null
+excluded_in_search: true
+---
+</code></pre>
+
+<p>The example above is for a javascript file in the assets folder that is used as a template,
+but should not be included in search.</p>
+
+<h3 id="external-search">External Search</h3>
+
+<p>If you have an external site with a search GET endpoint (meaning one that ends
+in <code>?q=&lt;term&gt;</code>, then you can automatically link page tags to search this endpoint.
+For example, on an HPC site I’d want a tag like “mpi” to do a search on 
+<a href="http://ask.cyberinfrastructure.org">http://ask.cyberinfrastructure.org</a> for mpi.
+See the <a href="#tags">tags</a> section below for how to configure this.</p>
+
+<h3 id="documentation">Documentation</h3>
+
+<p>Documentation pages should be written in the <code>docs</code> folder of the repository,
+and you are allowed to use whatever level of nesting (subfolders) that 
+works for you! It’s a Jekyll <a href="https://jekyllrb.com/docs/collections/">collection</a>, which means that you
+can add other content (images, scripts) and it will be included for linking to.</p>
+
+<h4 id="organization">Organization</h4>
+
+<p>The url that will render is based on the path. For example, if we had the following structure:</p>
+
+<pre><code>docs/
+  getting-started.md
+  clusters/
+     sherlock/
+         getting-started.md
+</code></pre>
+
+<p>The first page (akin to the one you are reading) would render at it’s path,
+<code>/docs/getting-started/</code>.</p>
+
+<h2 id="linking">Linking</h2>
+
+<p>From that page, we could provide the
+direct path in markdown to any subfolder to link to it, such as the second
+getting started page for sherlock:</p>
+
+<pre><code>[example](clusters/sherlock/getting-started.md)
+</code></pre>
+
+<p><a href="example-page">Here</a> is an example link to a relative path of a file (<code>example-page.md</code>)
+in the same directory, and from that page you can test linking to a subfoldr.
+In the case of not having a subfolder, we could write the link out directly:</p>
+
+<pre><code>[example]({{ site.baseurl }}/docs/clusters/sherlock/getting-started.md)
+</code></pre>
+
+<p>or just put the relative path:</p>
+
+<pre><code>[Here](example-page)
+</code></pre>
+
+<p>or better, there is a shortand trick! We can use the provided “includes” 
+template to do the same based on the path to create a link:</p>
+
+<pre><code>{% include doc.html name="Sherlock Cluster" path="clusters/sherlock/getting-started" %}
+</code></pre>
+<p>The path should be relative to the docs folder.</p>
+
+<h3 id="pages">Pages</h3>
+
+<p>The <code>pages</code> folder uses the same page layout, but is not part of the docs collection.
+The two are provided to create a distinction between website pages (e.g., about,
+feed.xml) and documentation pages.</p>
+
+<h3 id="navigation">Navigation</h3>
+
+<p>Whether you place your page under “pages” or “docs,” for those pages that you want added to the navigation, 
+you should add them to <code>_data/toc.yml</code>. If you’ve defined a <code>permalink</code> in the
+front end matter, you can use that (e.g., “About” below). If you haven’t and
+want to link to docs, the url is the path starting with the docs folder.
+Here is an example (currently the active example):</p>
+
+<pre><code class="language-yaml">- title: Documentation
+  url: docs
+  links:
+    - title: "Getting Started"
+      url: "docs/getting-started"
+      children:
+        - title: Features
+          url: "docs/getting-started#getting-started"
+        - title: Development
+          url: "docs/getting-started#development"
+        - title: Customization
+          url: "docs/getting-started#customization"
+    - title: "Extras"
+      url: "docs/extras"
+      children:
+        - title: Quizzes
+          url: "docs/extras/example-quiz"
+    - title: "About"
+      url: "about"
+    - title: "News"
+      url: "news
+</code></pre>
+
+<p>If you want to add an external url for a parent or child, do this:</p>
+
+<pre><code class="language-yaml">  - title: GitHub Repository
+    external_url: https://www.github.com/vsoch/mkdocs-jekyll
+</code></pre>
+
+<h3 id="news-posts">News Posts</h3>
+
+<p>It might be the case that your site or group has news items that would
+warrent sharing with the community, and should be available as a feed.
+For this reason, you can write traditional <a href="https://jekyllrb.com/docs/posts/">posts</a> in the <code>_posts</code>
+folder that will parse into the site <a href="/SVDOCS/es/feed.xml">feed</a>
+The bottom of the page links the user to a post archive, where posts are organized
+according to the year.</p>
+
+<h3 id="buttons">Buttons</h3>
+
+<p>Buttons come in a nice array of colors. Here is the code for a basic example,
+and you’d want to vary the <code>.btn-&lt;tag&gt;</code> to get different classes.</p>
+
+<pre><code class="language-html">&lt;button class="btn btn-success"&gt;.btn-success&lt;/button&gt;
+</code></pre>
+
+<p><button class="btn btn-success">.btn-success</button>
+<button class="btn btn-info">.btn-info</button>
+<button class="btn btn-secondary">.btn-secondary</button>
+<button class="btn btn-primary">.btn-primary</button>
+<button class="btn btn-danger">.btn-danger</button>
+<button class="btn btn-warning">.btn-warning</button></p>
+
+<h3 id="badges">Badges</h3>
+
+<p>For news post items, it’s nice to be able to tag it with something that indicates
+a status, such as “warning” or “alert.” For this reason, you can add badges to
+the front end matter of any post page, and they will render colored by a type,
+with the tag of your choice. For example, here is an example header for
+a post:</p>
+
+<pre><code class="language-yaml">---
+title:  "Two Thousand Nineteen"
+date:   2019-06-28 18:52:21
+categories: jekyll update
+badges:
+ - type: warning
+   tag: warning-badge
+ - type: danger
+   tag: danger-badge
+---
+</code></pre>
+
+<p>And here is the post preview with the rendered badges that it produces:</p>
+
+<p><span class="badge badge-warning">warning-badge</span>
+<span class="badge badge-danger">danger-badge</span></p>
+
+<p>And the other badges that you can define include success, info, secondary,
+and primary.</p>
+
+<p><span class="badge badge-success">success-badge</span>
+<span class="badge badge-info">info-badge</span>
+<span class="badge badge-secondary">secondary-badge</span>
+<span class="badge badge-primary">primary-badge</span></p>
+
+<h3 id="alerts">Alerts</h3>
+
+<div class="alert alert-info" role="alert">
+    <h4 class="alert-heading">What is an alert?</h4>
+    An alert is a box that can stand out to indicate important information. You can choose from levels success, warning, danger, info, and primary. This example is an info box, and the code for another might look like this:
+    </div>
+
+<pre><code>{% include alert.html type="info" title="Here is another!" %}
+</code></pre>
+
+<p>Just for fun, here are all the types:</p>
+
+<div class="alert alert-warning" role="alert">
+    <h4 class="alert-heading">warning</h4>
+    This is a warning
+    </div>
+
+<div class="alert alert-danger" role="alert">
+    <h4 class="alert-heading">danger</h4>
+    This alerts danger!
+    </div>
+
+<div class="alert alert-success" role="alert">
+    <h4 class="alert-heading">success</h4>
+    This alerts success
+    </div>
+
+<div class="alert alert-info" role="alert">
+    <h4 class="alert-heading">info</h4>
+    This is useful information.
+    </div>
+
+<div class="alert alert-primary" role="alert">
+    <h4 class="alert-heading">primary</h4>
+    This is a primary alert
+    </div>
+
+<div class="alert alert-secondary" role="alert">
+    <h4 class="alert-heading">secondary</h4>
+    This is a secondary alert
+    </div>
+
+<h3 id="quotes">Quotes</h3>
+
+<p>You can include block quotes to emphasize text.</p>
+
+<blockquote>
+  <p>Here is an example. Isn’t this much more prominent to the user?</p>
+</blockquote>
+
+<h2 id="development">Development</h2>
+
+<p>Initially (on OS X), you will need to setup <a href="http://brew.sh/">Brew</a> which is a package manager for OS X and <a href="https://git-scm.com/">Git</a>. To install Brew and Git, run the following commands:</p>
+
+<pre><code class="language-bash">/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+brew install git
+</code></pre>
+
+<p>If you are on Debian/Ubuntu, then you can easily install git with <code>apt-get</code></p>
+
+<pre><code class="language-bash">apt-get update &amp;&amp; apt-get install -y git
+</code></pre>
+
+<h3 id="install-jekyll">Install Jekyll</h3>
+
+<p>You can also install Jekyll with brew.</p>
+
+<pre><code class="language-bash">$ brew install ruby
+$ gem install jekyll
+$ gem install bundler
+$ bundle install
+</code></pre>
+
+<p>On Ubuntu I do a different method:</p>
+
+<pre><code class="language-bash">git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build
+echo 'export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"' &gt;&gt; ~/.bashrc
+exec $SHELL
+rbenv install 2.3.1
+rbenv global 2.3.1
+gem install bundler
+rbenv rehash
+ruby -v
+
+# Rails
+curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash -
+sudo apt-get install -y nodejs
+gem install rails -v 4.2.6
+rbenv rehash
+
+# Jekyll
+gem install jekyll
+gem install github-pages
+gem install jekyll-sass-converter
+
+rbenv rehash
+</code></pre>
+
+<h3 id="get-the-code">Get the code</h3>
+
+<p>You should first fork the repository to your GitHub organization or username,
+and then clone it.</p>
+
+<pre><code class="language-bash">$ git clone https://github.com/&lt;username&gt;/mkdocs-jekyll.git docs
+$ cd docs
+</code></pre>
+
+<p>You can clone the repository right to where you want to host the docs:</p>
+
+<pre><code class="language-bash">$ git clone https://github.com/&lt;username&gt;/mkdocs-jekyll.git docs
+$ cd docs
+</code></pre>
+
+<h3 id="serve">Serve</h3>
+
+<p>Depending on how you installed jekyll:</p>
+
+<pre><code class="language-bash">jekyll serve
+# or
+bundle exec jekyll serve
+</code></pre>
+
+<h3 id="preview">Preview</h3>
+
+<p>We provide a <a href="https://circleci.com/">CircleCI</a> configuration recipe that you
+can use to preview your site on CircleCI before merging into master. You
+should follow the instructions to <a href="https://circleci.com/docs/enterprise/quick-start/">set up a project</a>,
+and then in the project settings be sure to enable building forked build requests,
+and to cancel redundant builds. The preview will be built on CircleCI, and saved
+to static files for you to browse. The only change you will need is to edit
+the static files location to be the name of your respository, which is at te
+bottom of the <code>.circleci/config.yml</code> file:</p>
+
+<pre><code class="language-yaml">      - store_artifacts:
+          path: ~/repo/_site
+          destination: mkdocs-jekyll
+</code></pre>
+
+<p>In the above, the destination should coincide with your repository name.
+Remember that for most links, CircleCI won’t honor an <code>index.html</code> file in a subfolder
+(e.g., <code>subfolder/index.html</code> will not be served as <code>subfolder/</code>, so for example,
+you might need to turn this:</p>
+
+<pre><code>https://&lt;circleci&gt;/0/mkdocs-jekyll/docs/getting-started/
+</code></pre>
+<p>into this:</p>
+
+<pre><code>https://&lt;circleci&gt;/0/mkdocs-jekyll/docs/getting-started/index.html
+</code></pre>
+
+<h2 id="customization">Customization</h2>
+
+<h4 id="configyml">config.yml</h4>
+
+<p>To edit configuration values, customize the <a href="_config.yml">_config.yml</a>.
+Most are documented there, and please <a href="https://www.github.com///issues">open an issue</a> if you have questions.</p>
+
+<h4 id="adding-pages">Adding pages</h4>
+
+<p>To add pages, write them into the <a href="pages">pages</a> folder. 
+You define urls based on the <code>permalink</code> attribute in your pages,
+and then add them to the navigation by adding to the content of <a href="_data/toc.yml">_data/toc.yml</a>.</p>
+
+<h4 id="tags">Tags</h4>
+
+<p>If you include tags on a page, by default they will link to the <a href="/SVDOCS/es/tags">tags page</a> on the site. However, if you define a <code>tag_search_endpoint</code> url in your configuration file, by clicking
+the tag, the user will be taken to this page to search for it. As an example,
+we define the current search endpoint to be Ask Cyberinfrastructure, and
+page tags link to a search on it:</p>
+
+<pre><code class="language-yaml">tag_search_endpoint: https://ask.cyberinfrastructure.org/search?q=
+tag_color: danger # danger, success, warning, primary, secondary, info
+</code></pre>
+
+<p>Note that you can also choose a color! The tags appear at the top of the page,
+as they do on this page. The tags should be defined like this in the front end
+matter:</p>
+
+<pre><code class="language-yaml">tags: 
+ - jekyll
+ - github
+</code></pre>
+
+<p>They are appended to the first h1 block, so generally your pages should have a header.
+If you comment out this variable, then each of your tags will link to it’s appropriate
+spot on the tags page linked above.</p>
+
+<pre><code class="language-yaml">#tag_search_endpoint: https://ask.cyberinfrastructure.org/search?q=
+tag_color: primary # danger, success, warning, primary, info, secondary
+</code></pre>
+<h2 id="developmentss">Developmentss</h2>
+
+<h1 id="firas">Firas</h1>
+:ET
