@@ -1,7 +1,0 @@
-I"ô<h1 id="a-nested-page">A Nested Page</h1>
-
-<p><code>this is the Spanish version</code></p>
-
-<p>This is an example of a page that doesnâ€™t have a permalink defined, and
-is not included in the table of contents (<code>_data/toc.yml</code>).</p>
-:ET
