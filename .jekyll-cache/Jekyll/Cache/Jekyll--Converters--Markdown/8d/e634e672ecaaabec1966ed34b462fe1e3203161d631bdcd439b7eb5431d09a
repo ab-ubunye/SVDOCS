@@ -1,0 +1,39 @@
+I"Á<p>A model can have one or multiple custom types.
+You can create new custom types by selecting the model for which you want to add the custom types.
+<strong>Note that within a model, the custom types must have unique names.</strong></p>
+
+<h1 id="1-in-the-models-list-view-click-the-model-for-which-you-would-to-add-a-custom-type">1. In the Models List view, click the model for which you would to add a custom type.</h1>
+
+<p><img src="/en/attachments/5.png" alt="/en/attachments/5.png" /></p>
+
+<h2 id="2-the-relevant-custom-types-page-will-appear">2. The relevant custom types page will appear.</h2>
+<p>This page enables you to create custom types and to view a list of the existing custom types for the selected model.</p>
+<h3 id="3-to-create-a-new-custom-type-click-on-the-create-custom-type-button">3. To create a new custom type, click on the <strong>Create Custom Type</strong> button.</h3>
+<p>The Create Custom Type window will appear afterward.</p>
+
+<p><img src="/en/attachments/6.png" alt="/en/attachments/6.png" /></p>
+
+<ol>
+  <li>Enter the details for the new custom type.
+ Fields marked with an asterisk (*) are required.</li>
+</ol>
+
+<p><img src="/en/attachments/7.png" alt="/en/attachments/7.png" /></p>
+
+<ul>
+  <li>
+    <p>Enter a name for the custom type.
+Only alphanumeric characters, hyphens (-), and underscores (_) are allowed. The model name will automatically prefix the model namespace.</p>
+  </li>
+  <li>
+    <p>Select the parent type for the type and / or aspect.
+Please note that the parent type must either be a sub-type of the cm:content type or cm:folder type. The custom type will inherit all the properties and aspects assigned to the parent.</p>
+  </li>
+  <li>Enter an optional description of the type and / or aspect.</li>
+  <li>Click Create.</li>
+</ul>
+
+<p>The new custom type appears in the Custom Types view. Additional information displayed in the view includes the type ID</p>
+
+<p><img src="/en/attachments/8.png" alt="/en/attachments/8.png" /></p>
+:ET
