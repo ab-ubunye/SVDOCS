@@ -1,17 +1,15 @@
-name: Flex
-title: ScannerVision Docs
-email: info@ScannerVision.com
+title: "ScannerVision Docs"
+email: "info@scannervision.com"
 description: >- # this means to ignore newlines until "baseurl:"
-  this is the documentation site of scannervision 
+ this is the documentation site of scannervision 
   you can find all the details about our products in this site
-baseurl: "/SVDOCS" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
 
+
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "" # the base hostname & protocol for your site, e.g. http://example.com
 
 feedback: true
 
-logo_pixels: 34
-color: "#30638e"
 # Build settings
 plugins:
   - jekyll-feed
@@ -21,22 +19,25 @@ plugins:
 markdown: kramdown
 highlighter: pygments
 exclude: [_site, CHANGELOG.md, LICENSE, README.md, vendor]
-tag_color: primary # danger, success, warning, primary, info, secondary
 
+
+tag_color: primary # danger, success, warning, primary, info, secondary
 accentColor: red # purple, green, etc.
 themeColor: red # purple, green, blue, orange, purple, grey
 fixedNav: 'true' # true or false
+logo_pixels: 34
+color: "#white"
+
+stroke_color: "blue"
 
 # Paginate
 paginate: 1
 paginate_path: "/pagination/page:num/"
 
-
-# jekyll-multiple-languages-plugin settings:
-languages: ["en", "it", "es"]
+languages: ["en","es","it"]
+default_locale_in_subfolder: true
 
 exclude_from_localizations: ["javascript", "images", "css", "scripts", "favicon.ico"]
-default_locale_in_subfolder: true
 collections:
   docs:
     output: true

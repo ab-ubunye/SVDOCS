@@ -1,9 +1,14 @@
 <header>
-  <nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
+  <nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar" style="background-color: white;">
     <a class="navbar-brand" href="{{ site.baseurl }}/">
-      <span class="navbar-logo"></span>{% include logo.svg %}<span class="text-uppercase font-weight-bold">{{ site.title
-        }}</span>
+      <span class="navbar-logo">
+        <!-- <img src="/{{site.lang}}/assets/img/Ubunye_Logo.png" style="height: 50px;"> -->
+        {% include logo.svg %}
+      </span>
+     
     </a>
+    <a class="header-a" href=".">FAQ <i class="ri-arrow-drop-down-line ri-xl" style="vertical-align: text-top;"></i></a>
+    <a class="header-a" href="." class="">DOCS <i class="ri-arrow-drop-down-line ri-xl" style="vertical-align: text-top;"></i></a>
     <div class="td-navbar-nav-scroll ml-md-auto" id="main_navbar">
       <ul class="navbar-nav mt-2 mt-lg-0">
         <!-- <li class="nav-item mr-4 mb-2 mb-lg-0">
@@ -15,31 +20,33 @@
             href="{% if link.url %}{{ site.baseurl }}/{{ link.url }}{% else %}{{ link.external_url }}{% endif %}"><span>{{
               link.title }}</span></a>
         </li>{% endfor %}
+        <div class="dropdown">
+          <a class="dropbtn" style="text-transform: uppercase;"> <i class="ri-earth-line ri-xl" style="vertical-align: text-top;">&nbsp;</i> {{ site.lang }}</a>
+          <div class="dropdown-content">
         {% for lang in site.languages %}
         {% unless site.lang == lang %}
         {% if lang == site.default_lang and site.default_locale_in_subfolder != true %}
         <li class="nav-item mr-4 mb-2 mb-lg-0">
-          <a class="nav-link" href="{{ site.baseurl_root }}{{ page.url }}">{% t langs.{{ lang }} %}</a>
+          <a class="nav-link" href="{{ site.baseurl_root }}{{ page.url }}">{% t langs.{{ lang }} %} </a>
         </li>
         {% else %}
-        <li class="nav-item mr-4 mb-2 mb-lg-0">
-          <a class="nav-link" href="{{ site.baseurl_root }}/{{ lang }}{{ page.url }}">{% t langs.{{ lang }}
-            %}</a>
-        </li>
+            <a href="{{ site.baseurl_root }}/{{ lang }}{{ page.url }}">{% t langs.{{ lang }}%}</a>
         {% endif %}
 
         {% assign next = forloop.index | plus: 1 %}
 
         {% if forloop.last != true and site.languages[forloop.index] != site.lang or site.languages[forloop.index] ==
         site.lang and next < forloop.length %} {% endif %} {% endunless %} {% endfor %} </ul>
+      </div>
     </div>
+    </div>
+  
     <div class="navbar-nav d-none d-lg-block">
       <input type="search" class="form-control td-search-input" placeholder="&#xf002 {% t search %}"
         aria-label="Search this site…" autocomplete="off">
     </div>
 
-    <div class="navbar-nav d-none d-lg-block">
-    </div>
+    
     </div>
 
 

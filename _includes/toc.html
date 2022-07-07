@@ -1,8 +1,7 @@
 <script
   src="{{ site.baseurl }}/assets/js/jquery-3.3.1/jquery-3.3.1.min.js"
-  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  integrity=""
   crossorigin="anonymous"></script>
-
 <script>
 $(document).ready(function() {
 
@@ -15,21 +14,49 @@ $(document).ready(function() {
             var div_id = $(section).attr('id');
             var div_text = section.text().split('¶')[0];
             var parent = $("#" + div_id)
-            var content = '<li id="link_' + div_id + '" class="md-nav__item"><a class="md-nav__link" href="#' + div_id + '" title="' + div_text +'">' + div_text +'</a></li>';
+            var content = '<li id="link_' + div_id + '""><a href="#' + div_id + '" title="' + div_text +'">' + div_text +'</a></li>';
             $(toc).append(content);
 
             // Add section code to subnavigation
-            var children = $('<nav class="md-nav"><ul class="md-nav__list"></nav></ul>')
+            var children = $('<nav><ul></nav></ul>')
             var contenders = $("#" + div_id).nextUntil("h1");
             $.each(contenders, function(idx, contender){
                if($(contender).is('h2') || $(contender).is('h3')) {
                    var contender_id = $(contender).attr('id');
                    var contender_text = $(contender).text().split('¶')[0];
-                   var content = '<li class="md-nav__item"><a class="md-nav__link" href="#' + contender_id + '" title="' + contender_text +'">' + contender_text +'</a></li>';
+                   var content = '<li><a href="#' + contender_id + '" title="' + contender_text +'">' + contender_text +'</a></li>';
                    children.append(content);
                 }
              })
              $("#link_" + div_id).append(children);
         });
     });
+</script>
+
+<script>
+    $(document).ready(function(){
+      // Add smooth scrolling to all links
+      $("a").on('click', function(event) {
+    
+        // Make sure this.hash has a value before overriding default behavior
+        if (this.hash !== "") {
+          // Prevent default anchor click behavior
+          event.preventDefault();
+    
+          // Store hash
+          var hash = this.hash;
+    
+          // Using jQuery's animate() method to add smooth page scroll
+          // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+          $('html, body').animate({
+            scrollTop: $(hash).offset().top
+          }, 500, function(){
+       
+            // Add hash (#) to URL when done scrolling (default click behavior)
+            window.location.hash = hash;
+          });
+        } // End if
+      });
+    });
+
 </script>

@@ -2,44 +2,62 @@ global:
   tagline: English
 
 langs:
-  it: Italiano
   en: English
+  it: Italian
   es: Spanish
 
 
 toc:
-- title: Documentation
-  url: docs
+- title: DocVolante
   links:
-    - title: "Getting Started"
-      url: "docs/getting-started"
+    - title: "Model Editor"
+      url: "docs/DocVolante/ModelEditor"
       children:
-        - title: Features
-          url: "docs/getting-started#getting-started"
-        - title: Development
-          url: "docs/getting-started#development"
-        - title: Customization
-          url: "docs/getting-started#customization"
-    - title: "Extras"
-      url: "docs/extras"
+        - title: "Creating a new Model"
+          url: "docs/DocVolante/ModelEditor/CreatingNewModel"
+        - title: "Creating new custom type"
+          url: "docs/DocVolante/ModelEditor/CreatingNewCustomTypes"
+        - title: "Creating a new property"
+          url: "docs/DocVolante/ModelEditor/CreatingNewProperty"
+        - title: "References"
+          url: "docs/DocVolante/ModelEditor/References"
+    - title: "Admin Functions"
+      url: "docs/DocVolante/AdminFunctions"
       children:
-        - title: Quizzes
-          url: "docs/extras/example-quiz"
-    - title: "About"
-      url: "about"
-    - title: organization
-      url: "docs/getting-started#organization"
+        - title: "First-run wizard"
+          url: "docs/DocVolante/AdminFunctions/FirstRunWizard"
+        - title: "Licensing"
+          url: "docs/DocVolante/AdminFunctions/Licensing"
+        - title: "User Import"
+          url: "docs/DocVolante/AdminFunctions/UserImport"
+    - title: "General"
+      url: "docs/DocVolante/General"
+    - title: "Audit trails & Logs"
+      url: "docs/DocVolante/AuditTrailLogs"
+    - title: "Document Search"
+      url: "docs/DocVolante/DocumentSearch"
+    - title: "OCR"
+      url: "docs/DocVolante/OCR"
+    - title: "Upload, Drag & Drop"
+      url: "docs/DocVolante/UploadDragDrop"
+    - title: "Versioning & Document History"
+      url: "docs/DocVolante/VersioningDocumentHistory"
 
-navigation:
-- title: ScannerVision
-  url: docs/ScannerVision
+
 - title: aivika
   url: docs/aivika
-- title: DocVolante
-  url: docs/DocVolante
 
+
+- title: ScannerVision
+  url: docs/ScannerVision
+#  links:
+#    - title: "Model Editor"
+#      url: "docs/DocVolante/ModelEditor"
+
+navigation:
 
 search: "Search this site…"
+
 
 site_rights: "All Rights Reserved"
 aboutdocs: "About ScannerVision Documentation"
@@ -47,3 +65,4 @@ loading: "Loading"
 results: "results"
 for: "for"
 showing: "Showing"
+products: "Products"

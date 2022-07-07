@@ -1,46 +1,61 @@
 global:
-  tagline: Español
+  tagline: Spanish
 
 langs:
-  it: Italiana
-  en: Inglesa
-  es: Español
+  en: English
+  it: Italian
+  es: Spanish
+
 
 toc:
-- title: Documentación
-  url: docs
-  links:
-    - title: "Empezando"
-      url: "docs/getting-started"
-      children:
-        - title: Características
-          url: "docs/getting-started#getting-started"
-        - title: Desarrollo
-          url: "docs/getting-started#development"
-        - title: Personalización
-          url: "docs/getting-started#customization"
-    - title: "Extras"
-      url: "docs/extras"
-      children:
-        - title: Cuestionarios
-          url: "docs/extras/example-quiz"
-    - title: "Sobre"
-      url: "about"
-
-navigation:
-- title: ScannerVision
-  url: docs/ScannerVision
-- title: aivika
-  url: docs/aivika
 - title: DocVolante
   url: docs/DocVolante
+  links:
+    - title: "Model Editor"
+      url: "docs/DocVolante/ModelEditor"
+      children:
+        - title: "Creating a new Model"
+          url: "docs/DocVolante/ModelEditor/CreatingNewModel"
+        - title: "Creating new custom type"
+          url: "docs/DocVolante/ModelEditor/CreatingNewCustomTypes"
+        - title: "Creating a new property"
+          url: "docs/DocVolante/ModelEditor/CreatingNewProperty"
+        - title: "References"
+          url: "docs/DocVolante/ModelEditor/References"
+    - title: "Admin Functions"
+      url: "docs/DocVolante/AdminFunctions"
+      children:
+        - title: "First-run wizard"
+          url: "docs/DocVolante/AdminFunctions/FirstRunWizard"
+        - title: "Licensing"
+          url: "docs/DocVolante/AdminFunctions/Licensing"
+        - title: "User Import"
+          url: "docs/DocVolante/AdminFunctions/UserImport"
+    - title: "General"
+      url: "docs/DocVolante/General"
+    - title: "Audit trails & Logs"
+      url: "docs/DocVolante/AuditTrailLogs"
+    - title: "Document Search"
+      url: "docs/DocVolante/DocumentSearch"
+    - title: "OCR"
+      url: "docs/DocVolante/OCR"
+    - title: "Upload, Drag & Drop"
+      url: "docs/DocVolante/UploadDragDrop"
+    - title: "Versioning & Document History"
+      url: "docs/DocVolante/VersioningDocumentHistory"
+- title: aivika
+  url: docs/aivika
+- title: ScannerVision
+  url: docs/scannerVision
 
+navigation:
 
-search: "Busca este sitio…"
+search: " es Search this site…"
 
-site_rights: "Reservados todos los derechos"
-aboutdocs: "Acerca de la documentación de ScannerVision"
-loading: "Cargando"
-results: "resultados"
-for: "para"
-showing: "Demostración"
+site_rights: "All Rights Reserved"
+aboutdocs: "About ScannerVision Documentation"
+loading: "Loading"
+results: "results"
+for: "for"
+showing: "Showing"
+products: "Products"

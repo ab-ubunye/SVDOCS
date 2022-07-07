@@ -1,0 +1,1 @@
+This wizard will take the user through the necessary steps of getting a new installation of the DMS configured and ready to run.
